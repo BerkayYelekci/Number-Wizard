@@ -15,6 +15,7 @@ public class NumberWizard : MonoBehaviour
         Debug.Log("Pick a number on your mind.");
         Debug.Log("The highest number you can pick is :" + max);
         Debug.Log("The lowest number you can pick is : " + min);
+        Debug.Log("Tell me if your number is higher or lower than :" + guess);
         Debug.Log("Push up = Higher, Push Down = Lower, Push Enter = Correct");
         max = max + 1;
 
@@ -27,21 +28,22 @@ public class NumberWizard : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("Up Arrow key was pressed.");
+            
             min = guess;
             guess = (max + min) / 2;
-            Debug.Log(guess);
+            Debug.Log("Is it higher or lower than... "+guess);
+            
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("Down Arrow key was pressed.");
+            
             max = guess;
             guess = (max + min) / 2;
-            Debug.Log(guess);
+            Debug.Log("Is it higher or lower than... " + guess);
         }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("You hit enter.");
+            Debug.Log("Correct answer.");
         }
 
     }
